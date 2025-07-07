@@ -1,11 +1,11 @@
 # ShortMaker
 Download, slice and add captions to a YT video.
 
-# Script Description
+## Script Description
 - run.py --> Script to implement ShortMaker
 - ShortMaker.py --> Class to generate Shorts
 
-# Requirements
+## Requirements
 - moviepy
 - pysrt
 - yt-dlp
