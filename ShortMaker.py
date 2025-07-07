@@ -183,12 +183,3 @@ class ShortMaker(object):
         final_video = CompositeVideoClip([video] + subtitle_clips)
         final_video.write_videofile(output_video_file)
     
-video_url = "https://www.youtube.com/watch?v=pT_-F0r9Pi4&t=1314s"
-working_directory = 'C:/Users/andres.sanchez/Desktop/moles/'
-video_name = 'c1_pedro'
-idioma = 'es'
-
-sm = ShortMaker(working_directory, video_url, video_name)
-sm.video_and_captions_download()
-sm.video_slicer(0, 5, 10, 0, 5, 20)
-sm.add_captions()
