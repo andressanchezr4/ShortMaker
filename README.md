@@ -8,5 +8,7 @@ Download, slice and add captions to a YT video.
 # Requirements
 - moviepy
 - pysrt
+- yt-dlp
+- ffmpeg
 
 
