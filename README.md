@@ -1,5 +1,5 @@
 # ShortMaker
-Download, slice and add captions to a YT video.
+Takes a YT video and downloads, slices it and add captions to it.
 
 ## Script Description
 - run.py --> Script to implement ShortMaker
