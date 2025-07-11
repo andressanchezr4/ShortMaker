@@ -10,7 +10,7 @@ import pysrt
 import subprocess
 import os
 import re
-from moviepy import VideoFileClip, TextClip, CompositeVideoClip
+from moviepy import VideoFileClip, TextClip, CompositeVideoClip,  concatenate_videoclips
 
 class ShortMaker(object):
     def __init__(self, working_directory, video_url, video_name,
@@ -161,6 +161,11 @@ class ShortMaker(object):
         self.path2clipped_video = self.working_directory + f'clipped_video_{self.starting_time.replace(":", "-")}_{self.ending_time.replace(":", "-")}.mp4'
         
         clip.write_videofile(self.path2clipped_video, codec='libx264')
+    
+    def join_fragments(self, video_list_paths):
+        clips = [VideoFileClip(path) for path in video_list_paths]
+        final_clip = concatenate_videoclips(clips, method="compose")
+        final_clip.write_videofile(f'{self.working_directory}video_concatenado.mp4', codec="libx264", audio_codec="aac")
     
     def add_captions(self):
         final_srt = self.srt_path[:-4] + '4clip.srt'
